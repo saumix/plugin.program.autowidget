@@ -261,12 +261,12 @@ def _get_value(edit_def, key):
             value = dialog.input(utils.get_string(32121).format(key), defaultt=default)
 
         if value == default:
-            keep = dialog.yesno('AutoWidget',
-                                utils.get_string(32123).format('art' if key in utils.art_types else 'value',
-                                                  key, default),
-                                yeslabel=utils.get_string(32124),
-                                nolabel=utils.get_string(32124))
-            if keep:
+            clear = dialog.yesno('AutoWidget',
+                                 utils.get_string(32123).format('art' if key in utils.art_types else 'value',
+                                                                key, default),
+                                 yeslabel=utils.get_string(32124),
+                                 nolabel=utils.get_string(32125))
+            if clear:
                 value = ''
         if value is not None:
             edit_def[key] = utils.clean_artwork_url(value)
